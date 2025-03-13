@@ -1,0 +1,46 @@
+<div class="container">
+  <!-- <h2 class="text-center my-4">{{ editMode ? 'Edit Organization' : 'Add Organization' }}</h2> -->
+
+  <form (submit)="saveOrganization()" class="mb-4">
+    <div class="form-group">
+      <div>
+        <label for="name" class="form-label">Organization Name</label>
+        <input type="text" id="name" class="form-control" [(ngModel)]="org.Name" name="name" required />
+      </div>
+      <div>
+        <label for="location" class="form-label">Organization Location</label>
+        <input type="text" id="location" class="form-control" [(ngModel)]="org.Org_Loc" name="location" required />
+      </div>
+    </div>
+
+    <div class="ed" style="margin-top: 20px; text-align: center;">
+      <button type="submit" class="btn btn-primary me-2">{{ editMode ? 'Update' : 'Add' }}</button>
+      <button type="button" class="btn btn-secondary" (click)="clearForm()">Clear</button>
+    </div>
+  </form>
+
+  <div class="user-list">
+    <h3 class="text-center">Organization List</h3>
+    <table class="table table-bordered mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let org of organizationList">
+          <td>{{ org.orgId }}</td>
+          <td>{{ org.name }}</td>
+          <td>{{ org.org_Loc }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="editOrganization(org)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteOrganization(org.orgId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="user-box">
+    <form [formGroup]="userForm" (ngSubmit)="editingUserId ? updateUser() : addUser()">
+      
+      <div class="form-group">
+        <div>
+          <label>Name:</label>
+          <input type="text" formControlName="Name" required>
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" formControlName="Email" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>  
+          <label>Password:</label>
+          <input type="text" formControlName="Password" required>
+        </div>
+        <div>
+          <label>Organization:</label>
+          <select formControlName="OrgId" required>
+            <option value="" disabled>Select Organization</option>
+            <option *ngFor="let org of organizations" [value]="org.orgId">
+              {{ org.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label>Role:</label>
+          <select formControlName="RoleId" required>
+            <option value="" disabled>Select Role</option>
+            <option value="2">Admin</option>
+            <option value="3">Normal User</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit">
+        {{ editingUserId ? 'Update User' : 'Add User' }}
+      </button>
+    </form>
+  </div>
+
+  <div class="user-list">
+    <h2>User List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Organization</th>
+          <th>Password</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of users;">
+          <td>{{u.userId}}</td>
+          <td>{{ u.name }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ getOrganizationName(u.orgId) }}</td>
+          <td>{{ u.password }}</td> 
+          <td>{{ u.roleId === 1 ? 'Super Admin' : (u.roleId === 2 ? 'Admin' : 'Normal User') }}</td>
+          <td>
+            <button *ngIf="u.roleId !== 1 && u.roleId !== 2" (click)="editUser(u)">Edit</button>
+            <button *ngIf="u.roleId !== 1 && u.roleId !== 2" (click)="deleteUser(u.userId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

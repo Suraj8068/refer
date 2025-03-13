@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Manage Admin Permissions</h2>
+
+  <div class="card">
+    <div class="card-body">
+      <table class="table table-bordered text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Organization ID</th>
+            <th>Role ID</th>
+            <th *ngFor="let permission of admins.length > 0 ? admins[0].permissions : []">
+              {{ permission.permissionName }}
+            </th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let admin of admins">
+            <td>{{ admin.name }}</td>
+            <td>{{ getOrganizationName(admin.orgId) }}</td>
+            <td>{{ getRoleName(admin.roleId) }}</td>
+            <td *ngFor="let permission of admin.permissions">
+              <input
+                type="checkbox"
+                [(ngModel)]="permission.canAccess"
+                (change)="togglePermission(admin, permission, $event)"
+              />
+            </td>
+            
+            
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <button class="btn btn-primary mt-3" style="display: block; margin: 20px auto;" (click)="savePermissions()">
+    Save
+  </button>
+</div>

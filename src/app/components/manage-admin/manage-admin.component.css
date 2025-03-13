@@ -1,0 +1,60 @@
+/* Main container styling */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* Card styling */
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #fff;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+/* Button styling */
+.btn-primary {
+  background: #007bff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}

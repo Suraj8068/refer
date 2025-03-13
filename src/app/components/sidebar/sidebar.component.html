@@ -1,0 +1,30 @@
+<div class="sidebar" [ngClass]="{'superadmin': roleId == 1, 'admin': roleId == 2, 'user': roleId == 3}">
+  <ul>
+    <li *ngIf="roleId == 1">
+      <i class="fa fa-user-plus"></i>
+      <a routerLink="/add-user">Add User</a>
+    </li>
+    <li *ngIf="roleId == 1">
+      <i class="fa fa-building"></i>
+      <a routerLink="/add-organization">Add Organization</a>
+    </li>
+    <li *ngIf="roleId == 1">
+      <i class="fa fa-shield"></i>
+      <a routerLink="/role-access">Role Access</a>
+    </li>
+    <li *ngIf="roleId == 1">
+      <i class="fa fa-user-cog"></i>
+      <a routerLink="/manage-admin">Manage Admin</a>
+    </li>
+
+    <li *ngIf="roleId == 2">
+      <i class="fa fa-user"></i>
+      <a routerLink="/add-user">Add User</a>
+    </li>
+
+    <li *ngIf="roleId == 3">
+      <i class="fa fa-user-circle"></i>
+      <a routerLink="/profile">Profile</a>
+    </li>
+  </ul>
+</div>

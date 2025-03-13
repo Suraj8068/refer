@@ -1,0 +1,110 @@
+body {
+  background-color: #f1f3f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 850px; /* Increased width for better layout */
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 80vh; /* Fixed height */
+  margin-top: 10%;
+}
+
+h2 {
+  text-align: center;
+  color: #2874f0;
+  margin-bottom: 15px;
+}
+
+/* Form Layout */
+.user-box {
+  flex-shrink: 0; /* Prevents shrinking */
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px; /* Proper spacing */
+  margin-bottom: 15px;
+}
+
+.form-group div {
+  width: 50%;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Submit Button */
+button {
+  width: 70px;
+  background-color: #2874f0;
+  color: white;
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* font-size: 16px; */
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #1a5dc6;
+}
+
+/* User List */
+.user-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden; /* No horizontal scroll */
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 40vh; /* Ensures scrolling */
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  white-space: nowrap; /* Prevents breaking */
+}
+
+th {
+  background-color: #f1f3f6;
+  font-weight: bold;
+}
+
+/* Scroll inside table if needed */
+.user-list table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}

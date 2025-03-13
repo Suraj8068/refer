@@ -1,0 +1,124 @@
+.navbar {
+  background: #16acb4;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 5px;
+  width: 100%;
+  /* width: calc(100% - 80px); */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Navbar Logo */
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Navbar Menu */
+.navbar .menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar .menu ul li {
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+.navbar .menu ul li:hover {
+  background: #3a3b3c;
+  border-radius: 5px;
+}
+
+/* Main Content - Scrollable */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: absolute;
+  top: 60px; /* Navbar height */
+  left: 250px; /* Sidebar width */
+  width: calc(100% - 250px);
+  height: calc(100vh - 60px);
+  overflow-y: auto; /* Add User Form should scroll */
+}
+
+/* Add User Box */
+.user-box {
+  background-color: #16acb4;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-box h2 {
+  margin-bottom: 15px;
+}
+
+.user-box input,
+.user-box select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.user-box button {
+  background-color: #16acb4;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-box button:hover {
+  background-color: #003f80;
+}
+
+/* User List */
+.user-list {
+  margin-top: 20px;
+}
+
+.user-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-list th,
+.user-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.user-list th {
+  background-color: #007bff;
+  color: white;
+}
+
+.user-list button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.user-list button:hover {
+  background-color: #c82333;
+}

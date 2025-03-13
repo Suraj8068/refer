@@ -1,0 +1,27 @@
+<div class="user-list">
+      <h2>User List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Organization</th>
+            <!-- <th>Password</th> -->
+            <th>Role</th>
+            <!-- <th>Actions</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of users;">
+            <td>{{ u.name }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ getOrganizationName(u.orgId) }}</td>
+            <!-- <td> {{u.password}}</td>  -->
+            <td>{{ u.roleId === 1 ? 'Super Admin' : (u.roleId === 2 ? 'Admin' : 'Normal User')}}
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
